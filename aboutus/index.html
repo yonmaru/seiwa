@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>株式会社清和工業｜会社概要</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- ***** Start Meta Area ***** -->
+<!--#include virtual="/ssi/meta.html" -->
+<!-- ***** //End Meta Area ***** -->
+<link rel="stylesheet" type="text/css" href="/js/slick/slick.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/js/slick/slick-theme.css" media="screen" />
+</head>
+<body id="aboutus">
+<div id="wrapper">
+	<!-- ***** Start Header Area ***** -->
+	<!--#include virtual="/ssi/header.html" -->
+	<!-- ***** //End Header Area ***** -->
+	<article id="article">
+		<section class="pagemv">
+            <h1 class="pagetitle en"><p class="wow fadeInDown" data-wow-delay="1s">About us</p><span class="wow fadeIn" data-wow-delay="1s">会社概要</span></h1>
+		</section>
+        <section class="section01">
+            <div class="inner">
+                <img src="/img/aboutus/img01.jpg" alt="" class="leftimage wow fadeInRight">
+                <div class="box rightbox wow fadeIn" data-wow-delay="0.5s">
+                    <h2 class="boxtheme en">Message</h2>
+                    <h3 class="boxtitle">誇りを胸に、<br class="hidden-pc">未来を築く</h3>
+                    <p class="boxtext">1989（平成元）年、栃木県真岡市で創業して以来、清和工業はコンクリート橋梁やマクラギの製造や管理、現場施工などに一貫して携わってきました。徹底した安全管理のもと、信念を持った人材による丁寧な製品づくりと施工が私たちの強みです。これからも、社会の基礎を創るという“誇り”を胸に、清和工業は未来へ橋を架け続けてまいります。</p>
+                    <p class="sign">代表取締役<span>吉野 清一</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="section02">
+            <div class="inner">
+                <img src="/img/aboutus/img02.jpg" alt="" class="rightimage wow fadeInLeft">
+                <div class="box leftbox wow fadeIn">
+                    <h2 class="boxtheme en">Logo</h2>
+                    <h3 class="boxtitle">未来を繋げる力、<br class="hidden-pc">それが清和工業</h3>
+                    <p class="boxtext">繋がりと繋がりを合わせることで清和の『S』表現。<br>清和工業の『場所と場所、ヒトとヒト、今と未来を繋げる』の信念を表しています。</p>
+                </div>
+            </div>
+        </section>
+        <div class="parallax"></div>
+        <section class="section03">
+            <h4 class="en">Information</h4>
+            <dl>
+                <dd>社名：株式会社清和工業<br>代表者：吉野 清一</dd>
+                <dt>〈本社所在地〉</dt>
+                <dd>〒321-4369 栃木県真岡市熊倉2-19-2<br>TEL：0285-83-3838　FAX：0285-83-3837</dd>
+                <dt>〈事務所〉</dt>
+                <dd>〒321-4369 栃木県真岡市亀山1957<br>
+                TEL：0285-83-3434　FAX：0285-83-5677</dd>
+                <dd>設立：平成元年4月<br>
+                資本金：10,000,000円<br>
+                事業内容：とび・土木工事業、鉄筋工事業<br>
+                取引銀行：足利銀行</dd>
+            </dl>
+        </section>
+        <section class="map">
+            <a href="https://www.google.com/maps/@36.444268,139.992374,18z?hl=ja-JP" target="_blank" class="mapbtn">拡大地図を表示</a>
+            <div id="map"></div>
+        </section>
+        <div class="bottompadding hidden-pc"></div>
+	</article>
+	<!-- ***** Start Footer Area ***** -->
+	<!--#include virtual="/ssi/footer.html" -->
+	<!-- ***** //End Footer Area ***** -->
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<script>
+    function initMap() {
+        var latlng = new google.maps.LatLng( 36.444268, 139.992374 );
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: latlng,
+            mapTypeControl: false,
+            streetViewControl: false,
+        });
+			
+        //マーカーの設定
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: new google.maps.MarkerImage(
+               '/img/aboutus/pin.png',//マーカー画像URL
+                new google.maps.Size(74, 87),//マーカー画像のサイズ
+                new google.maps.Point(0, 0),//マーカー画像表示の起点（変更しない）
+                new google.maps.Point(37, 87)//マーカー位置の調整
+            ),  
+        });
+      }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&key=AIzaSyDzjdy_20KD1UZnXo0U-qkYWIJf27CtIWg&callback=initMap"></script>
+</body>
+</html>
