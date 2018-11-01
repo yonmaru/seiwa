@@ -1,19 +1,24 @@
 // JavaScript Document
-$(document).ready(function(){
-	$('.header').css('display','none');
-    $('.split').fadeIn(2000);
+$(window).load(function(){
+	$('.split').css('display','none');
+	setTimeout(function(){
+        $('.split').fadeIn(1000);
+	},1000);
 	setTimeout(function(){
         $('.split').fadeOut('slow');
-	},3500);
+	},4500);
 	setTimeout(function(){
 		$('.openinglogo').fadeIn('slow');
-	},4000);
+	},5000);
 	setTimeout(function(){
         $('.opening').fadeOut(2000);
         $('.header').fadeIn(2000);
-	},6500);
+	},7500);
 });
 
+$(window).scroll(function() {
+    $('.header').fadeIn(500);
+});
 
 
 $(function(){
@@ -31,15 +36,17 @@ $(function(){
         }
     });
     $(window).load(function(){
-        splitLength = $('.textSplitLoad').length;
-        setElm.find('.textSplitLoad').each(function(i){
-            splitThis = $(this);
-            splitTxt = splitThis.text();
-            splitThis.delay(i*(delaySpeed)).css({display:'inline-block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
-        });
         setTimeout(function(){
-                setElm.html(setText);
-        },splitLength*delaySpeed+fadeSpeed);
+            splitLength = $('.textSplitLoad').length;
+            setElm.find('.textSplitLoad').each(function(i){
+                splitThis = $(this);
+                splitTxt = splitThis.text();
+                splitThis.delay(i*(delaySpeed)).css({display:'inline-block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+            });
+            setTimeout(function(){
+                    setElm.html(setText);
+            },splitLength*delaySpeed+fadeSpeed);
+        },1000);
     });
 });
 
