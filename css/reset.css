@@ -97,7 +97,8 @@ hr {
 div:after,
 ul:after,
 article:after,
-section:after {
+section:after,
+dl:after {
     content: "";
     display: block;
     clear: both;

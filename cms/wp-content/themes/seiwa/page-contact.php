@@ -20,20 +20,20 @@
 <meta name="description" content="株式会社清和工業のお問い合わせページです。">
 <meta name="keywords" content="">
 <!-- ***** Start Meta Area ***** -->
-<!--#include virtual="/ssi/meta.html" -->
+<?php get_header('meta'); ?>
 <!-- ***** //End Meta Area ***** -->
 </head>
 <body id="contact">
 <div id="wrapper">
 	<!-- ***** Start Header Area ***** -->
-	<!--#include virtual="/ssi/header.html" -->
+	<?php get_header(); ?>
 	<!-- ***** //End Header Area ***** -->
 	<article id="article">
         <h1 class="pagetitle-static en"><p class="wow fadeInDown" data-wow-delay="0.5s">Contact</p><span class="wow fadeIn" data-wow-delay="0.5s">お問い合わせ</span></h1>
         <section class="section01">
             <div class="inner">
                 <p class="contact">お問い合わせは、<br class="hidden-pc">下記フォームよりお願いいたします。</p>
-                <form method="post" action="mail.php">
+                <form method="post" action="/form/mail.php">
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <th>会社名</th>
@@ -97,7 +97,7 @@
         </section>
 	</article>
 	<!-- ***** Start Footer Area ***** -->
-	<!--#include virtual="/ssi/footer.html" -->
+	<?php get_footer(); ?>
 	<!-- ***** //End Footer Area ***** -->
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 

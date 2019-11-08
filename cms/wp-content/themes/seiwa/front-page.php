@@ -20,16 +20,16 @@
 <meta name="description" content="橋はヒトとモノが行き交い、社会が動く大動脈。“場所”と“場所”、“今日”と“明日”をつなぐ架け橋を創るのが、私たち清和工業の仕事です。まだ見ぬ未来に渡っていくために、清和工業は今日も橋を架け続けていきます。">
 <meta name="keywords" content="">
 <!-- ***** Start Meta Area ***** -->
-<!--#include virtual="/ssi/meta.html" -->
+<?php get_header('meta'); ?>
 <!-- ***** //End Meta Area ***** -->
 <script src="/js/index.js"></script>
 <link rel="stylesheet" type="text/css" href="/js/slick/slick.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/js/slick/slick-theme.css" media="screen" />
 </head>
-<body id="home">
+<body id="home" class="seiwa-wp">
 <div id="wrapper">
 	<!-- ***** Start Header Area ***** -->
-	<!--#include virtual="/ssi/header.html" -->
+	<?php get_header(); ?>
 	<!-- ***** //End Header Area ***** -->
 	<article id="article">
 		<div class="main_visual">
@@ -42,31 +42,36 @@
             <h1 class="mvcatch">&nbsp;橋をつなぐ。<br>それは人と未来を<br class="hidden-pc">繋ぐこと</h1>
             <div class="opening">
                 <p class="mvcatch split">&nbsp;橋をつなぐ。<br>それは人と未来を<br class="hidden-pc">繋ぐこと</p>
-                <img src="img/common/openinglogo.png" alt="" class="openinglogo">
+                <img src="/img/common/openinglogo.png" alt="" class="openinglogo">
             </div>
 		</div>
 		<section class="section00">
 			<div class="inner wow fadeInUp">
-                <h2 class="en">News<a href="/news/" class="arrow arrow2 btn1 small hidden-sp">Read more...</a></h2>
+                <h2 class="en">News<a href="<?php echo home_url(); ?>/news/" class="arrow arrow2 btn1 small hidden-sp">Read more...</a></h2>
                 <div class="newstable">
                     <table>
-                        <tr>
-                            <th>2019.02.05</th>
-                            <td class="newscat"><span>お知らせ</span></td>
-                            <td><a href="#">HPリニューアルオープンしました。</a></td>
-                        </tr>                    
-                        <tr>
-                            <th>2019.02.05</th>
-                            <td class="newscat"><span>イベント</span></td>
-                            <td><a href="#">HPリニューアルオープンしました。</a></td>
-                        </tr>                    
-                        <tr>
-                            <th>2019.02.05</th>
-                            <td class="newscat"><span>プレスリリース</span></td>
-                            <td><a href="#">HPリニューアルオープンしました。</a></td>
-                        </tr>                    
+                        <?php
+                        $args = array(
+                          'post_type' => 'post',
+                          'posts_per_page' => 3
+                         );
+                        $wp_query = new WP_Query( $args );
+                        if ( $wp_query->have_posts() ) {
+                          while ( $wp_query->have_posts() ){
+                            $wp_query->the_post();
+                            ?>
+                            <tr>
+                                <th><?php the_time('Y.m.d'); ?></th>
+                                <td class="newscat"><?php the_category(' '); ?></td>
+                                <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+                            </tr>                                        
+                            <?php
+                          }
+                        }
+                        wp_reset_postdata();
+                        ?>
                     </table>
-                    <a href="/news/" class="arrow arrow2 btn1 hidden-pc">Read more...</a>
+                    <a href="<?php echo home_url(); ?>/news/" class="arrow arrow2 btn1 hidden-pc">Read more...</a>
                 </div>
             </div>
 		</section>
@@ -78,7 +83,7 @@
                     <h3 class="en home-catch">Pride in Quality,<br>Trust with Customers</h3>
                     <p>信頼と信用。それが清和工業の理念です。徹底した品質と安全の管理を担う、優れた人材への信頼。誇りをもって業務にあたる社員がいるからこそ、自信をもってサービスをお届けできる。すべてはお客様の信頼のために。「内に信頼、外に信用」を胸に、清和工業は日々邁進していきます。</p>
                 </div>
-                <a href="/aboutus/" class="arrow arrow2 btn1">Visit</a>
+                <a href="<?php echo home_url(); ?>/aboutus/" class="arrow arrow2 btn1">Visit</a>
             </div>
 		</section>
 		<section class="section02">
@@ -89,7 +94,7 @@
                     <h3 class="en home-catch">We Build the Future</h3>
                     <p>橋はヒトとモノが行き交い、社会が動く大動脈。“場所”と“場所”、“今日”と“明日”をつなぐ架け橋を創るのが、私たち清和工業の仕事です。まだ見ぬ未来に渡っていくために、清和工業は今日も橋を架け続けていきます。</p>
                 </div>
-                <a href="/ourbusiness/" class="arrow arrow2 btn1">Visit</a>
+                <a href="<?php echo home_url(); ?>/ourbusiness/" class="arrow arrow2 btn1">Visit</a>
             </div>
 		</section>
 		<section class="section04">
@@ -97,7 +102,7 @@
 			<div class="inner">
                 <h3 class="home-catch wow fadeInUp">新しい時代を橋とつくる</h3>
                 <p class="en wow fadeInUp">SEIWA KOGYO Co. Ltd.<br>has built bridges since 1989.</p>
-                <div><a href="/works/" class="arrow arrow2 btn1">Visit</a></div>
+                <div><a href="<?php echo home_url(); ?>/works/" class="arrow arrow2 btn1">Visit</a></div>
             </div>
 		</section>
 		<section class="section03">
@@ -110,13 +115,13 @@
                     誰からも感謝され、喜ばれ、<br class="hidden-pc">信頼される仕事がしたい。<br>
                     清和工業は、社会の大動脈を築き、<br class="hidden-pc">“ヒト”と“ヒト”、“今”と“未来”を<br class="hidden-pc">つなぐ仕事。<br>
                     明日への架け橋を築く清和工業で、<br class="hidden-pc">あなたの想いを実現させてみませんか？</p>
-                    <a href="/recruit/" class="arrow arrow2 btn1">Visit</a>
+                    <a href="<?php echo home_url(); ?>/recruit/" class="arrow arrow2 btn1">Visit</a>
                 </div>
             </div>
 		</section>
 	</article>
 	<!-- ***** Start Footer Area ***** -->
-	<!--#include virtual="/ssi/footer.html" -->
+	<?php get_footer(); ?>
 	<!-- ***** //End Footer Area ***** -->
 </div>
 <script src="/js/slick/slick.min.js"></script>

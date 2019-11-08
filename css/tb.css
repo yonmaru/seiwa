@@ -2,11 +2,19 @@
 /* タブレット用CSS */
 
 .hidden-sp {
-	display: inherit !important;
-}
-.hidden-tb {
-	display:none !important;
+	display:inherit !important;
 }
 .hidden-pc {
-	display: inherit !important;
+	display:none !important;
+}
+
+#wrapper {
+    width:1200px;
+    overflow: hidden;
+}
+
+.main_visual li,
+.pagemv,
+.parallax {
+    background-attachment:inherit;
 }

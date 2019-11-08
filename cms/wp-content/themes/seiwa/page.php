@@ -16,31 +16,29 @@
   gtag('config', 'UA-128371741-1');
 </script>
 <meta charset="utf-8">
-<title>お問い合わせ｜株式会社清和工業</title>
-<meta name="description" content="株式会社清和工業のお問い合わせ（サンクス）ページです。">
+<title><?php the_title(); ?>｜株式会社清和工業</title>
+<meta name="description" content="信念を持った人材による丁寧な製品づくりと施工が私たちの強み。清和工業は、社会の基礎を創るという“誇り”を胸に、清和工業は未来へ橋を架け続けています。">
 <meta name="keywords" content="">
 <!-- ***** Start Meta Area ***** -->
-<!--#include virtual="/ssi/meta.html" -->
+<?php get_header('meta'); ?>
 <!-- ***** //End Meta Area ***** -->
 </head>
-<body id="thanks">
+<?php if(is_page('ourbusiness')){ ?><body id="ourbusiness"><?php } ?>
+<?php if(is_page('recruit')){ ?><body id="recruit"><?php } ?>
+<?php if(is_page('thanks')){ ?><body id="thanks"><?php } ?>
 <div id="wrapper">
 	<!-- ***** Start Header Area ***** -->
-	<!--#include virtual="/ssi/header.html" -->
+	<?php get_header(); ?>
 	<!-- ***** //End Header Area ***** -->
 	<article id="article">
-        <h1 class="pagetitle-static en"><p class="wow fadeInDown" data-wow-delay="0.5s">Contact</p><span class="wow fadeIn" data-wow-delay="0.5s">お問い合わせ</span></h1>
-        <section class="section01">
-            <div class="inner">
-                <p class="thanks">この度は、当サイトにお問合せいただき、<br class="hidden-pc">誠にありがとうございました。<br>
-                ２営業日以内にご返信をさせていただきます。<br>
-                今しばらくお待ち下さいませ。</p>
-                <a href="/" class="btn1 arrow arrow2">TOPへ戻る</a>
-            </div>
-        </section>
+        <?php
+        if(have_posts()): while(have_posts()): the_post();?>
+        <?php the_content(); ?>
+        <?php endwhile; endif; ?>
+        <div class="bottompadding hidden-pc"></div>
 	</article>
 	<!-- ***** Start Footer Area ***** -->
-	<!--#include virtual="/ssi/footer.html" -->
+	<?php get_footer(); ?>
 	<!-- ***** //End Footer Area ***** -->
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
